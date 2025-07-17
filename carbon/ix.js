@@ -1,4 +1,4 @@
-console.log("ix deployed");
+// console.log("ix deployed");
 
 //Navigation Bar
 document.addEventListener("DOMContentLoaded", function () {

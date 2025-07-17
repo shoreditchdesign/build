@@ -1,4 +1,4 @@
-console.log("motion deployed");
+// console.log("motion deployed");
 
 //GSAP for Popups
 document.addEventListener("DOMContentLoaded", () => {

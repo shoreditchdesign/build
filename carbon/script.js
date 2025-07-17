@@ -1,4 +1,4 @@
-console.log("script deployed");
+// console.log("script deployed");
 
 //Disable Bounce
 window.addEventListener(
