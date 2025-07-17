@@ -1754,8 +1754,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   function initStackFadeAnimation() {
-    console.log("Initializing stack fade animation");
-
     const headingElement = document.querySelector(selectors.heading);
     const gridElement = document.querySelector(selectors.grid);
 

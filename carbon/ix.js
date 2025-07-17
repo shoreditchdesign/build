@@ -158,11 +158,6 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       on: {
         init: function () {
-          console.log(
-            "Swiper initialized with",
-            slidesPerView,
-            "slides per view",
-          );
           updateFractions(this);
         },
         slideChange: function () {
@@ -285,8 +280,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const openToggle = document.querySelector('[data-lbox-toggle="open"]');
   const closeToggle = document.querySelector('[data-lbox-toggle="close"]');
 
-  console.log("Vimeo lightbox controller initialized");
-
   if (!autoplayVideo || !lightboxWrap || !openToggle || !closeToggle) {
     console.warn("Missing required lightbox elements");
     return;
@@ -304,7 +297,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (modalIframe) {
         // Initialize Vimeo Player API
         vimeoPlayer = new Vimeo.Player(modalIframe);
-        console.log("Modal Vimeo player found and initialized");
       } else {
         console.warn("Vimeo iframe not found in modal container");
       }
@@ -396,8 +388,6 @@ document.addEventListener("DOMContentLoaded", function () {
       closeLightbox();
     }
   });
-
-  console.log("Vimeo lightbox event listeners attached");
 });
 
 // Marquee

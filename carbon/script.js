@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 100); // Short delay to wait for viewport update
     });
   } else {
-    console.log("Not a mobile device - skipping viewport locker");
+    console.warn("Viewport Locker: Mobile device not found:");
   }
 });
 
