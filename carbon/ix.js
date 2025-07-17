@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const slides = swiperContainer.querySelectorAll(".swiper-slide");
     if (slides.length === 0) return 1;
     const containerHeight = swiperContainer.offsetHeight;
-    console.log("Container height:", containerHeight);
+    // console.log("Container height:", containerHeight);
     let maxSlideHeight = 0;
     slides.forEach((slide) => {
       const slideHeight = slide.offsetHeight;
@@ -113,14 +113,14 @@ document.addEventListener("DOMContentLoaded", function () {
         maxSlideHeight = slideHeight;
       }
     });
-    console.log("Max slide height:", maxSlideHeight);
+    // console.log("Max slide height:", maxSlideHeight);
     if (maxSlideHeight === 0) return 1;
     const spaceBetween = 20;
     const availableHeight = containerHeight;
     const slidesCount = Math.floor(
       availableHeight / (maxSlideHeight + spaceBetween),
     );
-    console.log("Calculated slides per view:", Math.max(1, slidesCount));
+    // console.log("Calculated slides per view:", Math.max(1, slidesCount));
     return Math.max(1, slidesCount);
   }
 
@@ -813,8 +813,8 @@ document.addEventListener("DOMContentLoaded", function () {
       parseInt(listPaginate.getAttribute("data-pagination-initial")) || 6;
     const ITEMS_PER_LOAD =
       parseInt(listPaginate.getAttribute("data-pagination-unit")) || 3;
-    console.log("Pagination: Initial items:", INITIAL_ITEMS);
-    console.log("Pagination: Items per load:", ITEMS_PER_LOAD);
+    // console.log("Pagination: Initial items:", INITIAL_ITEMS);
+    // console.log("Pagination: Items per load:", ITEMS_PER_LOAD);
 
     // Initialize data attributes
     const totalItems = items.length;
@@ -852,12 +852,12 @@ document.addEventListener("DOMContentLoaded", function () {
       listPaginate.style.opacity = 1;
     }, 100);
 
-    console.log("Pagination:", totalItems, "total items");
+    // console.log("Pagination:", totalItems, "total items");
   }
 
   // Function to reset pagination visibility
   function resetPagination() {
-    console.log("Resetting pagination");
+    // console.log("Resetting pagination");
 
     // Get all items
     const items = listPaginate.querySelectorAll("[data-pagination-item]");
@@ -880,13 +880,13 @@ document.addEventListener("DOMContentLoaded", function () {
       loaderPaginate.setAttribute("data-load-state", "hide");
     }
 
-    console.log("Pagination reset complete");
+    // console.log("Pagination reset complete");
   }
 
   // Function to handle loading more items
   function runPagination(e) {
     e.preventDefault();
-    console.log("Load button clicked");
+    // console.log("Load button clicked");
 
     // Get current items
     const items = listPaginate.querySelectorAll("[data-pagination-item]");
@@ -911,7 +911,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Calculate next batch
     const newVisible = Math.min(currentVisible + ITEMS_PER_LOAD, totalItems);
-    console.log("Showing items from", currentVisible, "to", newVisible);
+    // console.log("Showing items from", currentVisible, "to", newVisible);
 
     // Show next items
     for (let i = currentVisible; i < newVisible; i++) {
@@ -964,12 +964,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    console.log(
-      "Zero results hide complete - Hidden:",
-      hiddenCount,
-      "Shown:",
-      shownCount,
-    );
+    // console.log(
+    //   "Zero results hide complete - Hidden:",
+    //   hiddenCount,
+    //   "Shown:",
+    //   shownCount,
+    // );
   }
 
   // Initialize pagination on load with delay to avoid race condition with Finsweet
@@ -997,7 +997,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       checkboxFilters.forEach((checkbox) => {
         checkbox.click();
-        console.log("Simulated click on checkbox:", checkbox.id);
+        // console.log("Simulated click on checkbox:", checkbox.id);
       });
     }, 100);
   }
@@ -1021,7 +1021,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // If any category is active, remove active from "all"
       if (anyActiveCategories && allFilter.classList.contains("active")) {
         allFilter.classList.remove("active");
-        console.log("All filter deactivated due to category selection");
+        // console.log("All filter deactivated due to category selection");
       }
     }
   }
@@ -1047,14 +1047,14 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       parentLabel.classList.remove("fs-cmsfilter_active");
     }
-    console.log("Checkbox toggled:", this.id, "Checked:", this.checked);
+    // console.log("Checkbox toggled:", this.id, "Checked:", this.checked);
   }
 
   //Commented out checkboxReset() eventListener
 
   // Function to count checked checkboxes and update dropdown counts
   function filterCount() {
-    console.log("Pagination: Updating filter counts");
+    // console.log("Pagination: Updating filter counts");
 
     // Find all dropdown containers with count indices
     const dropdowns = document.querySelectorAll(
@@ -1078,16 +1078,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (countDisplay) {
         countDisplay.textContent = checkedCount;
-        console.log(
-          `Pagination: Updated count for Dropdown ${countIndex}: ${checkedCount}`,
-        );
+        // console.log(
+        //   `Pagination: Updated count for Dropdown ${countIndex}: ${checkedCount}`,
+        // );
       }
     });
   }
 
   // Function to handle pagination reset and reinitialization when filters change (with checkbox hiding)
   function renderPaginate() {
-    console.log("Filter changed, updating pagination");
+    // console.log("Filter changed, updating pagination");
     // Reset pagination to initial state
     resetPagination();
     // Reinitialize with new filtered items after delay
@@ -1102,7 +1102,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to handle pagination reset and reinitialization when filters change (without checkbox hiding)
   function refreshPaginate() {
-    console.log("Filter changed, refreshing pagination");
+    // console.log("Filter changed, refreshing pagination");
     // Reset pagination to initial state
     resetPagination();
     // Reinitialize with new filtered items after delay
@@ -1115,19 +1115,19 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add click listeners to all filters for pagination updates
   if (allFilter) {
     allFilter.addEventListener("click", () => {
-      console.log("All filter clicked, rendering pagination");
+      // console.log("All filter clicked, rendering pagination");
       renderPaginate();
     });
   }
   radioFilters.forEach((filter) => {
     filter.addEventListener("click", () => {
-      console.log("Radio filter clicked, rendering pagination");
+      // console.log("Radio filter clicked, rendering pagination");
       renderPaginate();
     });
   });
   checkboxFilters.forEach((checkbox) => {
     checkbox.addEventListener("change", () => {
-      console.log("Checkbox filter changed, refreshing pagination");
+      // console.log("Checkbox filter changed, refreshing pagination");
       refreshPaginate();
     });
   });
