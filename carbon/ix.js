@@ -89,6 +89,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const isMobile = window.innerWidth < 991;
   let reviewsSwiper;
 
+  // Early exit if the swiper container is not found
+  const swiperContainer = document.querySelector("#reviews-swiper");
+  if (!swiperContainer) {
+    console.warn("Swiper: Component not found");
+    return;
+  }
+
   function updateFractions(swiper) {
     const currentSlide = swiper.realIndex + 1;
     const totalSlides = swiper.slides.filter(
