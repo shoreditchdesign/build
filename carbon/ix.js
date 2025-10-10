@@ -537,10 +537,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     cards.forEach((card, index) => {
-      card.setAttribute("data-marquee-card", "off");
-      if (index % 4 === 0) {
-        card.setAttribute("data-marquee-card", "on");
-      }
+      card.setAttribute("data-marquee-card", "on");
     });
   }
 
